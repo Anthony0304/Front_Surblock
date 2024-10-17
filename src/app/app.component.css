@@ -80,27 +80,44 @@
 .footer {
     background-color: #1a7d69;
     color: white;
-    padding: 20px; 
-    position: relative; /* Cambia a relative */
+    padding: 40px; /* Aumenta el padding para darle más espacio */
     width: 100%;
     display: flex;
     justify-content: space-between; 
-    align-items: center; 
-    flex-wrap: wrap; 
-    z-index: 1000; 
+    align-items: center; /* Alinea los elementos verticalmente en el centro */
+    flex-wrap: wrap;
 }
 
-
 .footer-logo {
-    flex: 0 1 200px;
+    flex: 0 1 200px; 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    align-items: center; /* Centra el logo y los íconos en el eje horizontal */
+    justify-content: center; /* Centra verticalmente */
+    margin-bottom: 20px; /* Da espacio extra por debajo */
 }
 
 .footer-logo-img {
     max-height: 100px;
     object-fit: contain;
+    margin-bottom: 15px; /* Ajusta el espacio entre logo e íconos */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center; /* Centra los íconos debajo del logo */
+    margin-top: 10px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+
+.social-icons a:hover {
+    color: #148ead;
 }
 
 .footer-columns {
@@ -145,18 +162,10 @@
 
 /* Responsivo */
 @media (max-width: 768px) {
-    .search-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .search-bar {
-        margin-bottom: 10px;
-        border-radius: 5px;
-    }
-
-    .search-btn {
-        border-radius: 5px;
+    .footer-logo {
+        flex: 1 1 100%;
+        align-items: center;
+        justify-content: center; /* En pantallas pequeñas, centra el logo y las redes sociales */
     }
 
     .footer-columns {
@@ -164,3 +173,6 @@
         align-items: center;
     }
 }
+
+
+
