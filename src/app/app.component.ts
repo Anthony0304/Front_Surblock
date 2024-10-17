@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'frontend_surblock';
+  constructor(private router: Router) {}
+
+  goToLogin() {
+    this.router.navigate(['/login']); // Navega hacia la ruta de login
+  }
 }
