@@ -9,7 +9,7 @@
 <body>
   <div class="header">
     <div class="logo-container">
-      <a href="index.html"> 
+      <a routerLink="/">
         <img src="assets/images/Logo.jpg" alt="Surblock Logo" class="logo" />
       </a>
     </div>
@@ -22,8 +22,10 @@
     </div>
 
     <div class="icons-container">
-      <i class="fas fa-user" title="Perfil" (click)="goToLogin()"></i>
+      <i class="fas fa-user" title="Perfil" (click)="goToLogin()" *ngIf="!authService.isAuthenticated()"></i>
       <i class="fas fa-shopping-cart" title="Carrito"></i>
+      <!-- Mostrar botón de cerrar sesión si el usuario está autenticado -->
+      <button (click)="logout()" class="logout-btn" *ngIf="authService.isAuthenticated()">Cerrar Sesión</button>
     </div>  
   </div>
 
@@ -35,9 +37,9 @@
   <!-- Footer Section -->
   <footer class="footer">
     <div class="footer-logo">
-      <a href="index.html"> 
-      <img src="assets/images/Logo.jpg" alt="Logo" class="footer-logo-img">
-    </a>
+      <a routerLink="/"> 
+        <img src="assets/images/Logo.jpg" alt="Logo" class="footer-logo-img">
+      </a>
       <div class="social-icons">
         <a href="https://www.facebook.com/share/kgPCG6ReLMmUkHdP/" target="_blank">
           <i class="fab fa-facebook-f"></i>

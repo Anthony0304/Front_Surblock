@@ -1,19 +1,45 @@
 <div class="register-container">
-    <h2>Registro</h2>
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-      <label for="name">Nombre de usuario:</label>
-      <input type="text" id="name" formControlName="name" required>
-  
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" formControlName="email" required>
-  
-      <label for="password">Contraseña:</label>
-      <input type="password" id="password" formControlName="password" required>
-  
-      <label for="password_confirmation">Confirmar contraseña:</label>
-      <input type="password" id="password_confirmation" formControlName="password_confirmation" required>
-  
-      <button type="submit">Registrarse</button>
-    </form>
-  </div>
-  
+  <h2>Registro</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    
+    <label for="name">Nombre de usuario:</label>
+    <input type="text" id="name" formControlName="name" required>
+
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" formControlName="email" required>
+
+    <!-- Campo de contraseña -->
+    <label for="password">Contraseña:</label>
+    <div class="password-wrapper">
+      <input 
+        type="{{ showPassword ? 'text' : 'password' }}" 
+        id="password" 
+        formControlName="password" 
+        required 
+      />
+      <i 
+        class="fa" 
+        [ngClass]="showPassword ? 'fa-eye' : 'fa-eye-slash'" 
+        (click)="togglePasswordVisibility()"
+      ></i>
+    </div>
+
+    <!-- Campo de confirmación de contraseña -->
+    <label for="password_confirmation">Confirmar contraseña:</label>
+    <div class="password-wrapper">
+      <input 
+        type="{{ showConfirmPassword ? 'text' : 'password' }}" 
+        id="password_confirmation" 
+        formControlName="password_confirmation" 
+        required 
+      />
+      <i 
+        class="fa" 
+        [ngClass]="showConfirmPassword ? 'fa-eye' : 'fa-eye-slash'" 
+        (click)="toggleConfirmPasswordVisibility()"
+      ></i>
+    </div>
+
+    <button type="submit">Registrarse</button>
+  </form>
+</div>

@@ -159,7 +159,21 @@
     width: 100%;
     color: #e8f0fe;
 }
-
+.logout-btn {
+    background-color: #1a7d69;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 14px;
+  }
+  
+  .logout-btn:hover {
+    background-color: #c82333;
+  }
+  
 /* Responsivo */
 @media (max-width: 768px) {
     .footer-logo {

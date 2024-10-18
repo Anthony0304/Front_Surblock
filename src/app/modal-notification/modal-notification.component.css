@@ -1,0 +1,22 @@
+mat-dialog-content {
+    padding: 20px;
+  }
+  
+  mat-dialog-actions {
+    display: flex;
+    justify-content: center;
+  }
+  
+  button {
+    background-color: #1a7d69;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #148ead;
+  }
+  
