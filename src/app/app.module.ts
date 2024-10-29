@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ModalNotificationComponent } from './modal-notification/modal-notification.component';
+import { ProductosComponent } from './productos/productos.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { ModalNotificationComponent } from './modal-notification/modal-notificat
     LoginComponent,
     RegisterComponent,
     ModalNotificationComponent,
+    ProductosComponent,
   
   ],
   imports: [
